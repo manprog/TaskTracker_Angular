@@ -1,0 +1,21 @@
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <!-- When used together with the <label> element, the for attribute specifies which form element a label is bound to. -->
+    <label for="text">Task</label>
+    <!-- The name attribute specifies a name for an HTML element. This name attribute can be used to reference the element in a JavaScript. For a <form> element, the name attribute is used as a reference when the data is submitted -->
+    <!-- [] are for the input e.g binding something. Events () are output. So 2-way bindings: [()] -->
+      <input type="text" name="text" [(ngModel)]="text" id="text" placeholder="Add Task">
+  </div>
+  <div class="form-control">
+    <label for="day">Day & Time</label>
+    <input type="text" name="day" [(ngModel)]="day" id="day" placeholder="Add Day & Time">
+  </div>
+  <div class="form-control form-control-check">
+    <label for="reminder">Set Reminder</label>
+    <input type="checkbox" name="reminder" [(ngModel)]="reminder" id="reminder">
+  </div>
+  <!-- The <input type="submit"> defines a submit button which submits all form values to a form-handler.
+  The form-handler is typically a server page with a script for processing the input data.
+  The form-handler is specified in the form's action attribute. -->
+  <input type="submit" value="Save Task" class="btn btn-block">
+</form>
